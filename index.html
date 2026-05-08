@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV – Lucas Ariel Espindola</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --navy:#0D1B2A; --navy-mid:#162333; --navy-light:#1E3048;
+  --accent:#4A9FD4; --accent-soft:#2C6E9E;
+  --gold:#C8A96E;
+  --white:#F8F9FA; --off-white:#E8EDF2;
+  --muted:#8FA3B8; --body:#CBD8E4;
+  --sw:238px;
+}
+body {
+  font-family:'DM Sans',sans-serif;
+  background:#dde1e7;
+  display:flex; justify-content:center;
+  padding:40px 20px; min-height:100vh;
+}
+.page {
+  width:210mm; min-height:297mm;
+  display:flex; background:var(--navy);
+  position:relative; overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,0.4);
+}
+/* ─ SIDEBAR ─ */
+.sidebar {
+  width:var(--sw); min-width:var(--sw);
+  background:var(--navy-mid);
+  display:flex; flex-direction:column;
+  padding:38px 22px;
+  border-right:1px solid rgba(74,159,212,0.12);
+  position:relative;
+}
+.sidebar::before {
+  content:''; position:absolute;
+  top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg,var(--accent),var(--gold));
+}
+.photo-wrapper { display:flex; flex-direction:column; align-items:center; margin-bottom:26px; }
+.photo-ring {
+  width:108px; height:108px; border-radius:50%;
+  padding:3px;
+  background:linear-gradient(135deg,var(--accent),var(--gold));
+  cursor:pointer;
+}
+.photo-circle {
+  width:100%; height:100%; border-radius:50%;
+  background:var(--navy-light);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Playfair Display',serif;
+  font-size:30px; font-weight:700; color:var(--accent);
+  overflow:hidden;
+}
+.photo-circle img { width:100%; height:100%; object-fit:cover; border-radius:50%; display:block; }
+.s-section { margin-bottom:22px; }
+.s-title {
+  font-size:9px; font-weight:600;
+  letter-spacing:2px; text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:10px; padding-bottom:5px;
+  border-bottom:1px solid rgba(74,159,212,0.22);
+}
+.contact-item {
+  display:flex; align-items:flex-start;
+  gap:8px; margin-bottom:9px;
+  font-size:10.5px; color:var(--body); line-height:1.4;
+}
+.ci { color:var(--accent); font-size:12px; margin-top:1px; flex-shrink:0; }
+.contact-item a { color:var(--body); text-decoration:none; }
+.contact-item a:hover { color:var(--accent); }
+.skill-item { margin-bottom:10px; }
+.skill-label { font-size:10.5px; color:var(--off-white); margin-bottom:4px; }
+.skill-bar { height:3px; background:rgba(255,255,255,0.07); border-radius:2px; overflow:hidden; }
+.skill-fill { height:100%; border-radius:2px; background:linear-gradient(90deg,var(--accent),var(--accent-soft)); }
+.tags { display:flex; flex-wrap:wrap; gap:5px; }
+.tag {
+  font-size:9.5px; color:var(--accent);
+  background:rgba(74,159,212,0.1);
+  border:1px solid rgba(74,159,212,0.2);
+  padding:3px 7px; border-radius:20px; line-height:1.4;
+}
+.tag.gold { color:var(--gold); background:rgba(200,169,110,0.1); border-color:rgba(200,169,110,0.2); }
+.lang-item { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+.lang-name { font-size:10.5px; color:var(--off-white); }
+.lang-dots { display:flex; gap:3px; }
+.dot { width:7px; height:7px; border-radius:50%; background:rgba(74,159,212,0.18); border:1px solid rgba(74,159,212,0.28); }
+.dot.on { background:var(--accent); border-color:var(--accent); }
+/* ─ MAIN ─ */
+.main { flex:1; padding:42px 34px 42px 30px; display:flex; flex-direction:column; }
+.name-block {
+  margin-bottom:24px; padding-bottom:20px;
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  position:relative;
+}
+.name-block::after {
+  content:''; position:absolute;
+  bottom:-1px; left:0; width:56px; height:2px;
+  background:var(--gold);
+}
+.name {
+  font-family:'Playfair Display',serif;
+  font-size:29px; font-weight:700;
+  color:var(--white); line-height:1.1;
+  margin-bottom:5px; letter-spacing:-0.3px;
+}
+.name-accent { color:var(--accent); }
+.role-title {
+  font-size:11px; font-weight:500;
+  color:var(--gold); letter-spacing:1.5px;
+  text-transform:uppercase; margin-bottom:10px;
+}
+.profile-text {
+  font-size:11px; color:var(--muted);
+  line-height:1.65; font-weight:300; max-width:420px;
+}
+.section { margin-bottom:20px; }
+.section-header { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+.section-label {
+  font-size:9px; font-weight:600;
+  letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--accent); white-space:nowrap;
+}
+.section-line { flex:1; height:1px; background:rgba(255,255,255,0.07); }
+.exp-item {
+  margin-bottom:16px; padding-left:13px;
+  border-left:2px solid rgba(74,159,212,0.2);
+  position:relative;
+}
+.exp-item::before {
+  content:''; position:absolute;
+  left:-4px; top:5px;
+  width:6px; height:6px;
+  border-radius:50%; background:var(--accent);
+}
+.exp-header { display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:2px; }
+.exp-title { font-size:12px; font-weight:600; color:var(--white); line-height:1.3; }
+.exp-period { font-size:9.5px; color:var(--gold); font-weight:500; white-space:nowrap; padding-top:2px; }
+.exp-company { font-size:10.5px; color:var(--accent); margin-bottom:7px; }
+.exp-bullets { list-style:none; display:flex; flex-direction:column; gap:4px; }
+.exp-bullets li {
+  font-size:10.5px; color:var(--body);
+  line-height:1.5; padding-left:12px;
+  position:relative; font-weight:300;
+}
+.exp-bullets li::before {
+  content:'▸'; position:absolute; left:0;
+  color:var(--accent); font-size:9px; top:1px;
+}
+.edu-item { margin-bottom:10px; }
+.edu-degree { font-size:11.5px; font-weight:600; color:var(--white); margin-bottom:2px; }
+.edu-school { font-size:10.5px; color:var(--accent); margin-bottom:2px; }
+.edu-detail { font-size:10px; color:var(--muted); font-weight:300; line-height:1.45; }
+.edu-badge {
+  display:inline-block; margin-top:4px;
+  font-size:9px; color:var(--gold);
+  background:rgba(200,169,110,0.1);
+  border:1px solid rgba(200,169,110,0.25);
+  padding:2px 8px; border-radius:20px;
+}
+@media print {
+  body { background:none; padding:0; }
+  .page { box-shadow:none; width:210mm; min-height:297mm; }
+}
+@page { size:A4; margin:0; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ══ SIDEBAR ══ -->
+<aside class="sidebar">
+
+  <div class="photo-wrapper">
+    <div class="photo-ring" id="photoRing" title="Clic para cambiar foto">
+      <div class="photo-circle">
+        <img id="profileImg"
+          src="https://i.postimg.cc/placeholder/photo.jpg"
+          onerror="this.style.display='none';document.getElementById('initials').style.display='flex'"
+          alt="Lucas Espindola">
+        <span id="initials" style="display:none;align-items:center;justify-content:center;width:100%;height:100%;">LE</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="s-section">
+    <div class="s-title">Contacto</div>
+    <div class="contact-item"><span class="ci">📞</span><span>011-67252033</span></div>
+    <div class="contact-item"><span class="ci">✉</span><a href="mailto:lucass.esph@gmail.com">lucass.esph@gmail.com</a></div>
+    <div class="contact-item"><span class="ci">💼</span><a href="https://www.linkedin.com/in/lucas-ariel-espindola-32b5b8274" target="_blank">linkedin.com/in/lucas-ariel-espindola</a></div>
+    <div class="contact-item"><span class="ci">📍</span><span>CABA, Argentina</span></div>
+  </div>
+
+  <div class="s-section">
+    <div class="s-title">Habilidades</div>
+    <div class="skill-item">
+      <div class="skill-label">Gestión legal / expedientes</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-label">Créditos hipotecarios</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-label">Microsoft Office</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-label">Excel (intermedio)</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-label">HTML / CSS / JS / React</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:58%"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-label">SQL · Git / GitHub</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:48%"></div></div>
+    </div>
+  </div>
+
+  <div class="s-section">
+    <div class="s-title">Idiomas</div>
+    <div class="lang-item">
+      <span class="lang-name">Español</span>
+      <div class="lang-dots">
+        <div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div>
+      </div>
+    </div>
+    <div class="lang-item">
+      <span class="lang-name">Inglés</span>
+      <div class="lang-dots">
+        <div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="s-section">
+    <div class="s-title">Áreas clave</div>
+    <div class="tags">
+      <span class="tag">Derecho Administrativo</span>
+      <span class="tag">Gestión de Contratos</span>
+      <span class="tag">Escrituración</span>
+      <span class="tag">Control Documental</span>
+      <span class="tag">Facturación</span>
+      <span class="tag gold">UBA – Abogacía</span>
+      <span class="tag gold">Sector Público / Privado</span>
+    </div>
+  </div>
+
+</aside>
+
+<!-- ══ MAIN ══ -->
+<main class="main">
+
+  <div class="name-block">
+    <h1 class="name">Lucas Ariel <span class="name-accent">Espindola</span></h1>
+    <div class="role-title">Administrativo Legal · Análisis y Gestión</div>
+    <p class="profile-text">
+      Profesional con más de 8 años de experiencia en gestión legal, administrativa y de créditos en el sector público. Estudiante avanzado de Abogacía (UBA – orientación Económico-Empresarial). Sólida trayectoria en manejo de expedientes de alta complejidad, coordinación interinstitucional y gestión contractual. Orientado a aportar rigor jurídico y capacidad operativa tanto en entornos públicos como privados, con foco en áreas legales y administrativas.
+    </p>
+  </div>
+
+  <!-- EXPERIENCIA -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-label">Experiencia</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-title">Administrativo – Área Legal, Créditos y Contratos</div>
+        <div class="exp-period">2017 – 2026</div>
+      </div>
+      <div class="exp-company">IVC – Instituto de Vivienda de la Ciudad de Buenos Aires (GCBA)</div>
+      <ul class="exp-bullets">
+        <li>Gestioné cartera de créditos hipotecarios sociales: análisis de viabilidad, documentación y seguimiento integral hasta la escrituración final de cada caso.</li>
+        <li>Coordiné procesos de escrituración entre beneficiarios, escribanías y organismos públicos (GCBA, Registro de la Propiedad), reduciendo tiempos de cierre mediante seguimiento proactivo.</li>
+        <li>Administré mesa de entradas con más de 50 expedientes mensuales, garantizando el cumplimiento estricto de plazos legales y administrativos.</li>
+        <li>Solicité y analicé informes de titularidad e inhibiciones ante el Registro de la Propiedad, previniendo irregularidades en operaciones inmobiliarias.</li>
+        <li>Redacté y tramité oficios judiciales y administrativos, actuando como nexo entre el área legal y organismos externos.</li>
+        <li>Gestioné la facturación de personal contratado: verificación de documentación, control de montos y coordinación con el área contable para el pago oportuno.</li>
+        <li>Administré la liquidación y control de horas extras del personal, asegurando la correcta imputación presupuestaria y el cumplimiento de la normativa aplicable.</li>
+        <li>Resolví consultas de beneficiarios sobre créditos UVA, adjudicaciones y procesos de escrituración.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-title">Operador Logístico y Administrativo</div>
+        <div class="exp-period">2013 – 2017</div>
+      </div>
+      <div class="exp-company">Ejército Argentino</div>
+      <ul class="exp-bullets">
+        <li>Lideré la coordinación logística de talleres y campamentos, gestionando equipos y recursos bajo estándares operativos estrictos y plazos rígidos.</li>
+        <li>Desarrollé capacidad de toma de decisiones bajo presión en entornos de alta exigencia, con responsabilidad directa sobre materiales y personal asignado.</li>
+        <li>Organicé y mantuve la documentación administrativa del área, aplicando criterios de orden, trazabilidad y control que luego trasladé al ámbito civil.</li>
+        <li>Participé en operaciones multisectoriales que requirieron coordinación entre unidades y cumplimiento de objetivos en tiempo y forma.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EDUCACIÓN -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-label">Educación</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">Abogacía — Ciclo Profesional Orientado (en curso)</div>
+      <div class="edu-school">UBA – Universidad de Buenos Aires &nbsp;·&nbsp; 2018 – Diciembre 2027 (est.)</div>
+      <div class="edu-detail">Orientación: Derecho Económico-Empresarial. Formación con foco en Derecho Administrativo, Contratos y Derecho Privado.</div>
+      <span class="edu-badge">Tramo final — CPO</span>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">Bachiller — Educación Secundaria Completa</div>
+      <div class="edu-school">Egresado</div>
+    </div>
+
+    <div class="edu-item" style="margin-top:4px; padding-top:10px; border-top:1px solid rgba(255,255,255,0.06);">
+      <div style="font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Formación Complementaria</div>
+      <div class="edu-degree" style="font-size:11px;">Desarrollo Web Full Stack — Curso</div>
+      <div class="edu-school">Coderhouse &nbsp;·&nbsp; 2022</div>
+      <div class="edu-detail">HTML, CSS, JavaScript, React JS. Fundamentos de programación, control de versiones con Git y gestión de repositorios en GitHub.</div>
+    </div>
+  </div>
+
+</main>
+</div>
+
+<script>
+(function(){
+  const img = document.getElementById('profileImg');
+  const initials = document.getElementById('initials');
+
+  function setPhoto(src){
+    const tmp = new Image();
+    tmp.onload = () => {
+      img.src = src;
+      img.style.display = 'block';
+      initials.style.display = 'none';
+    };
+    tmp.onerror = () => {
+      img.style.display = 'none';
+      initials.style.display = 'flex';
+    };
+    tmp.src = src;
+  }
+
+  document.getElementById('photoRing').addEventListener('click', () => {
+    const inp = document.createElement('input');
+    inp.type = 'file'; inp.accept = 'image/*';
+    inp.onchange = e => {
+      const f = e.target.files[0];
+      if(!f) return;
+      const r = new FileReader();
+      r.onload = ev => setPhoto(ev.target.result);
+      r.readAsDataURL(f);
+    };
+    inp.click();
+  });
+
+  document.addEventListener('dragover', e => e.preventDefault());
+  document.addEventListener('drop', e => {
+    e.preventDefault();
+    const f = e.dataTransfer.files[0];
+    if(f && f.type.startsWith('image/')){
+      const r = new FileReader();
+      r.onload = ev => setPhoto(ev.target.result);
+      r.readAsDataURL(f);
+    }
+  });
+
+  img.onerror = () => {
+    img.style.display = 'none';
+    initials.style.display = 'flex';
+  };
+})();
+</script>
+</body>
+</html>
